@@ -1,0 +1,180 @@
+Order Id  Order Date       Ship Mode    Segment        Country             City       State  ...         Category Sub Category       Product Id cost price List Price  Quantity  Discount Percent
+0         1  2023-03-01    Second Class   Consumer  United States        Henderson    Kentucky  ...        Furniture    Bookcases  FUR-BO-10001798        240        260         2                 2
+1         2  2023-08-15    Second Class   Consumer  United States        Henderson    Kentucky  ...        Furniture       Chairs  FUR-CH-10000454        600        730         3                 3
+2         3  2023-01-10    Second Class  Corporate  United States      Los Angeles  California  ...  Office Supplies       Labels  OFF-LA-10000240         10         10         2                 5
+3         4  2022-06-18  Standard Class   Consumer  United States  Fort Lauderdale     Florida  ...        Furniture       Tables  FUR-TA-10000577        780        960         5                 2
+4         5  2022-07-13  Standard Class   Consumer  United States  Fort Lauderdale     Florida  ...  Office Supplies      Storage  OFF-ST-10000760         20         20         2                 5
+
+[5 rows x 16 columns]
+Data Shape:
+(9994, 16)
+
+Data Types:
+Order Id             int64
+Order Date          object
+Ship Mode           object
+Segment             object
+Country             object
+City                object
+State               object
+Postal Code          int64
+Region              object
+Category            object
+Sub Category        object
+Product Id          object
+cost price           int64
+List Price           int64
+Quantity             int64
+Discount Percent     int64
+dtype: object
+
+Data Types after Convertion:
+Order Id                     int64
+Order Date          datetime64[ns]
+Ship Mode                   object
+Segment                     object
+Country                     object
+City                        object
+State                       object
+Postal Code                  int64
+Region                      object
+Category                    object
+Sub Category                object
+Product Id                  object
+cost price                   int64
+List Price                   int64
+Quantity                     int64
+Discount Percent             int64
+dtype: object
+
+Checking Nulls:
+Order Id            0
+Order Date          0
+Ship Mode           1
+Segment             0
+Country             0
+City                0
+State               0
+Postal Code         0
+Region              0
+Category            0
+Sub Category        0
+Product Id          0
+cost price          0
+List Price          0
+Quantity            0
+Discount Percent    0
+dtype: int64
+
+Verifyling Zero Nulls:
+Order Id            0
+Order Date          0
+Ship Mode           0
+Segment             0
+Country             0
+City                0
+State               0
+Postal Code         0
+Region              0
+Category            0
+Sub Category        0
+Product Id          0
+cost price          0
+List Price          0
+Quantity            0
+Discount Percent    0
+dtype: int64
+
+Checking Duplicates:
+0
+
+Data Shape after Cleaning:
+(9993, 16)
+
+   Order Id Order Date       Ship Mode    Segment        Country             City       State  ...         Category Sub Category       Product Id cost price List Price  Quantity  Discount Percent
+0         1 2023-03-01    Second Class   Consumer  United States        Henderson    Kentucky  ...        Furniture    Bookcases  FUR-BO-10001798        240        260         2                 2
+1         2 2023-08-15    Second Class   Consumer  United States        Henderson    Kentucky  ...        Furniture       Chairs  FUR-CH-10000454        600        730         3                 3
+2         3 2023-01-10    Second Class  Corporate  United States      Los Angeles  California  ...  Office Supplies       Labels  OFF-LA-10000240         10         10         2                 5
+3         4 2022-06-18  Standard Class   Consumer  United States  Fort Lauderdale     Florida  ...        Furniture       Tables  FUR-TA-10000577        780        960         5                 2
+4         5 2022-07-13  Standard Class   Consumer  United States  Fort Lauderdale     Florida  ...  Office Supplies      Storage  OFF-ST-10000760         20         20         2                 5
+
+[5 rows x 16 columns]
+Unique Values of 'Ship Mode' column are:
+['Second Class' 'Standard Class' 'Not Available' 'unknown' 'First Class'
+ 'Same Day']
+
+Unique Values of 'Segment' column are:
+['Consumer' 'Corporate' 'Home Office']
+
+Unique Values of 'Country' column are:
+['United States']
+
+Unique Values of 'Region' column are:
+['South' 'West' 'Central' 'East']
+
+Unique Values of 'Category' column are:
+['Furniture' 'Office Supplies' 'Technology']
+
+Unique Values of 'Sub Category' column are:
+['Bookcases' 'Chairs' 'Labels' 'Tables' 'Storage' 'Furnishings' 'Art'
+ 'Phones' 'Binders' 'Appliances' 'Paper' 'Accessories' 'Envelopes'
+ 'Fasteners' 'Supplies' 'Machines' 'Copiers']
+
+After Convertion
+Unique Values of 'Ship Mode' column are:
+['Second Class' 'Standard Class' 'Not Available' 'Unknown' 'First Class']
+
+After Convertion
+Unique Values of 'Segment' column are:
+['Consumer' 'Corporate' 'Home Office']
+
+After Convertion
+Unique Values of 'Country' column are:
+['United States']
+
+After Convertion
+Unique Values of 'Region' column are:
+['South' 'West' 'Central' 'East']
+
+After Convertion
+Unique Values of 'Category' column are:
+['Furniture' 'Office Supplies' 'Technology']
+
+After Convertion
+Unique Values of 'Sub Category' column are:
+['Bookcases' 'Chairs' 'Labels' 'Tables' 'Storage' 'Furnishings' 'Art'
+ 'Phones' 'Binders' 'Appliances' 'Paper' 'Accessories' 'Envelopes'
+ 'Fasteners' 'Supplies' 'Machines' 'Copiers']
+
+Summary Statistics: 
+          Order Id                     Order Date   Postal Code    cost price    List Price     Quantity  Discount Percent
+count  9993.000000                           9993   9993.000000   9993.000000   9993.000000  9993.000000       9993.000000
+mean   4997.988192  2022-12-29 09:51:32.044431104  55192.137696    201.195837    229.763835     3.789853          3.483939
+min       1.000000            2022-01-01 00:00:00   1040.000000      0.000000      0.000000     1.000000          2.000000
+25%    2500.000000            2022-06-29 00:00:00  23223.000000     20.000000     20.000000     2.000000          2.000000
+50%    4998.000000            2022-12-28 00:00:00  56560.000000     50.000000     50.000000     3.000000          3.000000
+75%    7496.000000            2023-07-03 00:00:00  90008.000000    180.000000    210.000000     5.000000          4.000000
+max    9994.000000            2023-12-31 00:00:00  99301.000000  18110.000000  22640.000000    14.000000          5.000000
+std    2884.895168                            NaN  32064.815951    537.769763    623.276635     2.225046          1.114164
+
+   order_id order_date       ship_mode    segment        country             city       state  ...         category sub_category       product_id cost_price list_price  quantity  discount_percent
+0         1 2023-03-01    Second Class   Consumer  United States        Henderson    Kentucky  ...        Furniture    Bookcases  FUR-BO-10001798        240        260         2                 2
+1         2 2023-08-15    Second Class   Consumer  United States        Henderson    Kentucky  ...        Furniture       Chairs  FUR-CH-10000454        600        730         3                 3
+2         3 2023-01-10    Second Class  Corporate  United States      Los Angeles  California  ...  Office Supplies       Labels  OFF-LA-10000240         10         10         2                 5
+3         4 2022-06-18  Standard Class   Consumer  United States  Fort Lauderdale     Florida  ...        Furniture       Tables  FUR-TA-10000577        780        960         5                 2
+4         5 2022-07-13  Standard Class   Consumer  United States  Fort Lauderdale     Florida  ...  Office Supplies      Storage  OFF-ST-10000760         20         20         2                 5
+
+[5 rows x 16 columns]
+
+
+Data after deriving discount, sales_price & profit, and dropping 'list_price','cost_price','discount_percent':
+   order_id order_date       ship_mode    segment        country             city       state  postal_code region         category sub_category       product_id  quantity  discount  revenue  profit
+0         1 2023-03-01    Second Class   Consumer  United States        Henderson    Kentucky        42420  South        Furniture    Bookcases  FUR-BO-10001798         2       5.2    254.8    14.8
+1         2 2023-08-15    Second Class   Consumer  United States        Henderson    Kentucky        42420  South        Furniture       Chairs  FUR-CH-10000454         3      21.9    708.1   108.1
+2         3 2023-01-10    Second Class  Corporate  United States      Los Angeles  California        90036   West  Office Supplies       Labels  OFF-LA-10000240         2       0.5      9.5    -0.5
+3         4 2022-06-18  Standard Class   Consumer  United States  Fort Lauderdale     Florida        33311  South        Furniture       Tables  FUR-TA-10000577         5      19.2    940.8   160.8
+4         5 2022-07-13  Standard Class   Consumer  United States  Fort Lauderdale     Florida        33311  South  Office Supplies      Storage  OFF-ST-10000760         2       1.0     19.0    -1.0
+
+Data Loading to the Database Starting..........
+Data successfully loaded into the 'orders_data' table.
+Database connection closed.

@@ -1,0 +1,7 @@
+kaggle
+pandas
+numpy
+ipykernel
+SQLAlchemy
+pymysql
+# run: pip install -r requirements.txt
